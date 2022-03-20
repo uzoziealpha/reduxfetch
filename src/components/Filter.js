@@ -1,9 +1,14 @@
+import { data } from 'autoprefixer'
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { loadData } from '../redux/complimentRedux/compliment.actions'
 import { COMPLIMENT_KEY } from '../redux/complimentRedux/compliment.reducer'
 
 const Filter = () => {
+
+    const [loading, setLoading] = useState([])
+
+
     // initialize useDispatch
    let dispatch = useDispatch()
 
@@ -11,12 +16,12 @@ const Filter = () => {
     useEffect(() => {
         dispatch(loadData())
 
-    }, [])
+    }, [dispatch])
 
     //view data from store
     let viewData = useSelector((state) => {
         return state[COMPLIMENT_KEY]
-
+        
     })
 
    
@@ -26,7 +31,7 @@ const Filter = () => {
 
     <div>
       <div>
-       <h3>Latest Results: {viewData.data.length}</h3>
+       <h3>Latest Results: {COMPLIMENT_KEY.length}</h3>
       </div>
 
     
