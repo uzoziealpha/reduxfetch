@@ -26,7 +26,7 @@ const Filter = () => {
 
     <div>
       <div>
-       <h3>Latest Results: {viewData.data.data.length}</h3>
+       <h3>Latest Results: {viewData.data.length}</h3>
       </div>
 
     
