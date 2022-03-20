@@ -5,6 +5,15 @@ import { store } from "./redux/store";
 import { Provider } from 'react-redux'
 import Navbar from "./components/Navbar";
 import Title from "./components/Title";
+import Filter from "./components/Filter";
+
+
+
+const sorting = (e) => {
+
+  console.log('sort')        
+}
+
 
 const App = () => {
   return (

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { loadData } from '../redux/complimentRedux/compliment.actions'
 import { COMPLIMENT_KEY } from '../redux/complimentRedux/compliment.reducer'
+import Filter from './Filter'
 
 const Layout = () => {
     // initialize useDispatch
@@ -24,16 +25,19 @@ const Layout = () => {
 
 
     return (
+        
         <React.Fragment>
-
+        <Filter/>
             <div className='row'>
                 {
                     viewData.data.length === 0 ? null :
                         <React.Fragment>
                             {
                                 viewData.data.data.map((item) => {
+                                 
                                     return (
                                         <>
+                                        
                                         <div
                                           className="col-md-3 shadow-lg p-3 mb-5 bg-white rounded"
                                           style={{ margin: "40px" }}
@@ -54,9 +58,12 @@ const Layout = () => {
                                               <p>+HK$500 upon interview</p>
                                             </div>
                                           </div>
-                                      </>
-                                      
 
+
+                                     
+                                      
+                                      
+                                      </>
                                     )
                                 })
                             }
